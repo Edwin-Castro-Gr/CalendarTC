@@ -7,25 +7,25 @@
             </div>
             <?php $validation = \Config\Services::validation();?>
             <form method="post" action=<?= route_to('admin.login.handler') ?>>
-                
+
                 <?= csrf_field() ?>
                 <?php if (!empty(session()->getFlashdata('success'))): ?>
                     <div class="alert alert-danger">
                         <?= session()->getFlashdata('success') ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                        </button>                        
+                        </button>
                     </div>
                 <?php endif;?>
-                
+
                 <?php if (!empty(session()->getFlashdata('fail'))): ?>
                     <div class="alert alert-danger">
                         <?= session()->getFlashdata('fail') ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                        </button>                        
+                        </button>
                     </div>
-                <?php endif;?>        
+                <?php endif;?>
                 <div class="input-group custom">
                     <input type="text" class="form-control form-control-lg" placeholder="Usuario" id="username" name="username" value="<?= set_value('username') ?>">
                     <div class="input-group-append custom">
@@ -34,7 +34,7 @@
                 </div>
                 <?php if ($validation->getError('username')): ?>
                     <div class="d-block text-danger" style="margin-top: 25px; margin-bottom: 15px;">
-                        <?= $validation->getError('username') ?>                        
+                        <?= $validation->getError('username') ?>
                     </div> 
                 <?php endif;?> 
                 <div class="input-group custom">
@@ -45,7 +45,7 @@
                 </div>
                 <?php if ($validation->getError('password')): ?>
                     <div class="d-block text-danger" style="margin-top: 25px; margin-bottom: 15px;">
-                        <?= $validation->getError('password') ?>                        
+                        <?= $validation->getError('password') ?>
                     </div>
                 <?php endif;?>
                 <div class="row pb-30">
@@ -62,12 +62,9 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="input-group mb-0">                            
-                                                
-                            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">                                           
-                            
+                        <div class="input-group mb-0">
+                            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
                         </div>
-                        
                     </div>
                 </div>
             </form>
