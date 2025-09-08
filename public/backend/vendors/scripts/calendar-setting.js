@@ -18,16 +18,35 @@ jQuery(document).ready(function(){
 	// ------------------------------------------------------ //
 	jQuery(function() {
 		// page is ready
+		// Forzar locale de moment (necesario si moment.js está presente)
+		
+
 		jQuery('#calendar').fullCalendar({
-			
-			locale: "es",
-			themeSystem: 'bootstrap4',
-			// emphasizes business hours
+	// ajustes visuales / comportamiento
+	  		locale: 'es',          // <-- importante
+       		themeSystem: 'bootstrap4',
 			businessHours: false,
 			defaultView: 'month',
-			// event dragging & resizing
 			editable: true,
-			// header
+			firstDay: 1, // lunes
+			weekNumbers: false,
+
+			// textos en español (ya los pone locale, pero se pueden forzar)
+			buttonText: {
+				today: 'Hoy',
+				month: 'Mes',
+				week: 'Semana',
+				day: 'Día',
+				list: 'Agenda'
+			},
+
+			// formato de horas y cabeceras
+			timeFormat: 'H:mm', // 24h: 9:30
+			columnHeaderFormat: 'dddd ', // ej: Lun 4
+			titleFormat: 'MMMM YYYY', // ej: Septiembre 2018
+
+
+
 			header: {
 				left: 'title',
 				center: 'month,agendaWeek,agendaDay',

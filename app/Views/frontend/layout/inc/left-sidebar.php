@@ -30,12 +30,12 @@
 				<li class="dropdown">
 					<a href="javascript:;" class="dropdown-toggle">
 						<span class="micon dw dw-edit2"></span><span class="mtext">Gestión de Declaraciones</span>
-					</a>					
+					</a>
 				</li>
 				<li class="dropdown">
 					<a href="javascript:;" class="dropdown-toggle">
 						<span class="micon dw dw-library"></span><span class="mtext">Gestión Tributario</span>
-					</a>					
+					</a>
 				</li>
 				<li>
 					<a href="calendar.html" class="dropdown-toggle no-arrow">
@@ -45,8 +45,8 @@
 				<li class="dropdown">
 					<a href="javascript:;" class="dropdown-toggle">
 						<span class="micon dw dw-apartment"></span><span class="mtext"> Reportes </span>
-					</a>					
-				</li>				
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>

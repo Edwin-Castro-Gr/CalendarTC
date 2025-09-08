@@ -58,12 +58,12 @@ class AuthController extends BaseController
         }else{
             $userModel = new User();
             $userdata = $userModel->where($fieldType, $username)->first();
-            
+            $password = $this->request->getVar('password');
             if ($userdata['estado'] == "0") {
                 return redirect()->route('admin.login.form')->with('fail', 'El usuario se encuentra inactivo.')->withInput();
             }else{
-                
-                $check_password = Hash::check($this->request->getVar('password'), $userdata['password']);
+
+                $check_password = Hash::check($password, $userdata['password']);
 
                 if (!$check_password) {
                     return redirect()->route('admin.login.form')->with('fail', 'Contraseña incorrecta.')->withInput();

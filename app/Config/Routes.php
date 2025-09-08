@@ -15,6 +15,11 @@ $routes->group('admin', static function ($routes) {
         $routes->get('roles', 'RolesController::index', ['as' => 'admin.roles']);
         $routes->get('usuarios', 'UserController::index', ['as' => 'admin.usuarios']);
         $routes->post('usuariosAgregar', 'UserController::agregarUsuario', ['as' => 'admin.usuarios.agregar']);
+        $routes->get('get-usuarios', 'UserController::getUsuarios', ['as' => 'get-usuarios']);
+        $routes->get('get-usuario', 'UserController::getUsuario', ['as' => 'get-usuario']);
+        $routes->post('usuariosActualizar', 'UserController::actualizarUsuario', ['as' => 'admin.usuarios.actualizar']);
+        $routes->post('usuariosEliminar', 'UserController::eliminarUsuario', ['as' => 'admin.usuarios.eliminar']);
+        
         $routes->get('clientes', 'ClientesController::index', ['as' => 'admin.clientes']);
         
     });

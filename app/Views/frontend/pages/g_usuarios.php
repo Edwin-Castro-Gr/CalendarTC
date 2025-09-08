@@ -41,7 +41,7 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<table id="tablaUsuarios" class="table table-sm table-borderless table-hover table-striped">	
+				<table id="usuarios-table" class="table table-sm table-borderless table-hover table-striped">
 					<thead>
 						<tr>
 							<th scope="col">ID</th>
@@ -49,17 +49,11 @@
 							<th scope="col">Correo</th>
 							<th scope="col">Estado</th>
 							<th scope="col">Acciones</th>
+							<th scope="col">Ordering</th>
 						</tr>
 					</thead>
 					<tbody>
 						<!-- Aquí se cargarán los usuarios mediante AJAX -->
-						<tr>
-							<th scope="row">1</th>
-							<td>---</td>
-							<td>---</td>
-							<td>---</td>
-							<td>---</td>
-						</tr>
 					</tbody>
 				</table>
 			</div>
@@ -67,11 +61,27 @@
 	</div>
 </div>
 <?php include 'modals/usuario-modal.php' ?>
+<?php include 'modals/modificarUsuario-modal.php' ?>
 
 <?= $this->endSection() ?>
+<?= $this->section('stylesheet') ?>
+<!-- Datatable Setting css -->
+<link href="/backend/src/plugins/datatables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+<link href="/backend/src/plugins/datatables/css/responsive.bootstrap4.min.css" rel="stylesheet" />
 
+<?= $this->endSection() ?>
 <?= $this->section('scripts') ?>
-	<script src="/backend/_js/usuarios.js"></script>
+<!-- Datatable Setting js -->
+<script src="/backend/src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/backend/src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+<script src="/backend/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+<script src="/backend/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+<script>
+    // Variable disponible para el JS estático
+    var GET_USUARIOS_URL = "<?= route_to('get-usuarios') ?>";
+	var GET_USUARIO_URL = "<?= route_to('get-usuario') ?>";
+</script>
+<script src="/backend/_js/usuarios.js"></script>
 <!-- Datatable Setting js -->
 
 <?= $this->endSection() ?>

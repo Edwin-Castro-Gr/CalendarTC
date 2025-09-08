@@ -105,7 +105,7 @@ class App extends BaseConfig
      *
      * If false, no automatic detection will be performed.
      */
-    public bool $negotiateLocale = false;
+    public bool $negotiateLocale = true;
 
     /**
      * --------------------------------------------------------------------------
@@ -201,5 +201,5 @@ class App extends BaseConfig
     public bool $CSPEnabled = false;
 
     public $sessionDriver   = 'CodeIgniter\Session\Handlers\DatabaseHandler';
-    public $sessionSavePath = 'ci_sessions';  
+    public $sessionSavePath = 'ci_sessions';
 }

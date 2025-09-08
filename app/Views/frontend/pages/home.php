@@ -89,7 +89,9 @@
    <?= $this->endSection() ?>
 
    <?= $this->section('scripts') ?>         
-      <script src="/backend/src/plugins/fullcalendar/fullcalendar.min.js"></script>
+      <script src="/backend/src/plugins/fullcalendar/fullcalendar.min.js"></script>  
+	 
+	  <script src="/backend/src/plugins/fullcalendar/gcal.min.js"></script> 
       <script src="/backend/vendors/scripts/calendar-setting.js"></script>
    <?= $this->endSection() ?>
 
